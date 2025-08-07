@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Ongoing\Swissrets\Dto;
+namespace Ongoing\Swissrets\Dto\Utility;
 
 
 
+use Ongoing\Swissrets\Dto\Address\SwissRetsAddressDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

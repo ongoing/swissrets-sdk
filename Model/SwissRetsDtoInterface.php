@@ -10,5 +10,8 @@ namespace Ongoing\Swissrets\Model;
  */
 interface SwissRetsDtoInterface
 {
+    /**
+     * Needed for JSON generation.
+     */
     public function getData(): array;
 }

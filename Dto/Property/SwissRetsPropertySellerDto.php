@@ -6,8 +6,8 @@ namespace Ongoing\Swissrets\Dto\Property;
 
 
 use Ongoing\Swissrets\Dto\Project\SwissRetsProjectSellerDto;
-use Ongoing\Swissrets\Dto\SwissRetsOrganizationDto;
-use Ongoing\Swissrets\Dto\SwissRetsPersonDto;
+use Ongoing\Swissrets\Dto\Utility\SwissRetsOrganizationDto;
+use Ongoing\Swissrets\Dto\Utility\SwissRetsPersonDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

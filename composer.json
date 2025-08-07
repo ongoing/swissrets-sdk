@@ -23,5 +23,18 @@
     "require": {
         "php": ">=8.2",
         "twig/twig": "^3.0"
-    }
+    },
+    "autoload": {
+      "psr-4": {
+          "Ongoing\\Swissrets\\": ""
+      },
+      "exclude-from-classmap": [
+          "/Tests/"
+      ]
+  },
+  "autoload-dev": {
+      "psr-4": {
+        "Ongoing\\Swissrets\\Tests\\": "/Tests/"
+      }
+  }
 }

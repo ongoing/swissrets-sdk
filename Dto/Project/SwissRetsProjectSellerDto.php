@@ -5,8 +5,8 @@ namespace Ongoing\Swissrets\Dto\Project;
 
 
 
-use Ongoing\Swissrets\Dto\SwissRetsOrganizationDto;
-use Ongoing\Swissrets\Dto\SwissRetsPersonDto;
+use Ongoing\Swissrets\Dto\Utility\SwissRetsOrganizationDto;
+use Ongoing\Swissrets\Dto\Utility\SwissRetsPersonDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

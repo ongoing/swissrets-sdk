@@ -5,8 +5,8 @@ namespace Ongoing\Swissrets\Dto\Property;
 
 
 
+use Ongoing\Swissrets\Dto\Attachment\SwissRetsAttachmentsDto;
 use Ongoing\Swissrets\Dto\Project\SwissRetsProjectLocalizationDto;
-use Ongoing\Swissrets\Dto\SwissRetsAttachmentsDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

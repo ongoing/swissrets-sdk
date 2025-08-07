@@ -5,10 +5,6 @@ namespace Ongoing\Swissrets\Dto\Property;
 
 
 
-use Ongoing\Swissrets\Dto\SwissRetsAddressDto;
-use Ongoing\Swissrets\Dto\SwissRetsAvailabilityDto;
-use Ongoing\Swissrets\Model\PropertyCategory;
-use Ongoing\Swissrets\Model\PropertyType;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

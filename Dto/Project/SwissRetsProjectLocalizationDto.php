@@ -5,7 +5,7 @@ namespace Ongoing\Swissrets\Dto\Project;
 
 
 
-use Ongoing\Swissrets\Dto\SwissRetsAttachmentsDto;
+use Ongoing\Swissrets\Dto\Attachment\SwissRetsAttachmentsDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 

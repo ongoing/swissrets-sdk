@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Ongoing\Swissrets\Dto;
+namespace Ongoing\Swissrets\Dto\Utility;
 
 
 
