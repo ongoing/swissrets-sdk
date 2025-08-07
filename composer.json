@@ -1,0 +1,27 @@
+{
+    "name": "ongoing/swissrets-sdk",
+    "type": "library",
+    "description": "A collection of classes to easier build SwissRETS JSON and XML files.",
+    "keywords": [
+        "swissrets",
+        "xml-structure",
+        "xml",
+        "json",
+        "standard",
+        "switzerland",
+        "realestatestandards"
+    ],
+    "homepage": "https://github.com/ongoing/swissrets-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Basil Baumgartner",
+            "email": "basil.baumgartner@ongoing.ch"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2",
+        "twig/twig": "^3.0"
+    }
+}
