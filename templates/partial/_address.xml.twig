@@ -1,0 +1,16 @@
+<address>
+    {% if addressDto.countryCode %}<countryCode>{{ addressDto.countryCode }}</countryCode>{% endif %}
+    {% if addressDto.locality %}<locality>{{ addressDto.locality }}</locality>{% endif %}
+    {% if addressDto.region %}<region>{{ addressDto.region }}</region>{% endif %}
+    {% if addressDto.postalCode %}<postalCode>{{ addressDto.postalCode }}</postalCode>{% endif %}
+    {% if addressDto.postOfficeBoxNumber %}<postOfficeBoxNumber>{{ addressDto.postOfficeBoxNumber }}</postOfficeBoxNumber>{% endif %}
+    {% if addressDto.street %}<street>{{ addressDto.street }}</street>{% endif %}
+    {% if addressDto.streetNumber %}<streetNumber>{{ addressDto.streetNumber }}</streetNumber>{% endif %}
+    {% if addressDto.streetAddition %}<streetAddition>{{ addressDto.streetAddition }}</streetAddition>{% endif %}
+    {% if addressDto.subunit %}<subunit>{{ addressDto.subunit }}</subunit>{% endif %}
+    {% if addressDto.geo %}
+        {% include 'partial/_geo.xml.twig' with {
+            'geoDto': addressDto.geo,
+        } only %}
+    {% endif %}
+</address>

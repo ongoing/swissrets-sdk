@@ -1,0 +1,5 @@
+<buy {% if buyDto.referring %}referring="{{ buyDto.referring.value }}"{% endif %}>
+    {% if buyDto.price %}<price>{{ buyDto.price }}</price>{% endif %}
+    {% if buyDto.extra %}<extra>{{ buyDto.extra }}</extra>{% endif %}
+    {% if buyDto.wirPercentage %}<wirPercentage>{{ buyDto.wirPercentage }}</wirPercentage>{% endif %}
+</buy>

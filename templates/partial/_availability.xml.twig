@@ -1,0 +1,1 @@
+<availability {% if availabilityDto.start %}start="{{ availabilityDto.start | swissRetsDate }}"{% endif %} {% if availabilityDto.expiration %}expiration="{{ availabilityDto.expiration | swissRetsDate }}"{% endif %}>{{ availabilityDto.state.value }}</availability>

@@ -1,0 +1,5 @@
+<rent {% if rentDto.referring %}referring="{{ rentDto.referring.value }}"{% endif %} {% if rentDto.interval %}interval="{{ rentDto.interval.value }}"{% endif %}>
+    {% if rentDto.gross %}<gross>{{ rentDto.gross }}</gross>{% endif %}
+    {% if rentDto.net %}<net>{{ rentDto.net }}</net>{% endif %}
+    {% if rentDto.extra %}<extra>{{ rentDto.extra }}</extra>{% endif %}
+</rent>

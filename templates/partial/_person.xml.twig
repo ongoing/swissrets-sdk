@@ -1,0 +1,12 @@
+{# string elementName = "contactPerson" | "inquiryPerson" | "visitPerson" #}
+
+<{{ elementName }}>
+    {% if personDto.function %}<function>{{ personDto.function }}</function>{% endif %}
+    {% if personDto.givenName %}<givenName>{{ personDto.givenName }}</givenName>{% endif %}
+    {% if personDto.familyName %}<familyName>{{ personDto.familyName }}</familyName>{% endif %}
+    {% if personDto.email %}<email>{{ personDto.email }}</email>{% endif %}
+    {% if personDto.mobile %}<mobile>{{ personDto.mobile }}</mobile>{% endif %}
+    {% if personDto.phone %}<phone>{{ personDto.phone }}</phone>{% endif %}
+    {% if personDto.gender %}<gender>{{ personDto.gender }}</gender>{% endif %}
+    {% if personDto.note %}<note>{{ personDto.note }}</note>{% endif %}
+</{{ elementName }}>

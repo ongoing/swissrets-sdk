@@ -1,0 +1,9 @@
+<attachments>
+    {% if attachmentsDto.getImages | length %}
+        {% for imageDto in attachmentsDto.getImages %}
+            {% include 'partial/attachment/_image.xml.twig' with {
+                'imageDto': imageDto,
+            } only %}
+        {% endfor %}
+    {% endif %}
+</attachments>

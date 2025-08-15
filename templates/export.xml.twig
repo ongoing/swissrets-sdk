@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://swissrets.ch/dist/v2.7.0/schema.xsd">
+    <created>{{ 'now' | date("Y-m-d\TH:i:s") }}</created>
+    <generator version="{{ exportDto.generatorVersion }}">{{ exportDto.generatorName }}</generator>
+    <projects>
+{#        {% for projectDto in exportDto.getProjects %}#}
+{#        {% endfor %}#}
+    </projects>
+    <properties>
+        {% for propertyDto in exportDto.properties %}
+            {% include 'partial/property/_property.xml.twig' with {
+                'propertyDto': propertyDto,
+            } only %}
+        {% endfor %}
+    </properties>
+</export>

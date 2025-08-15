@@ -1,0 +1,21 @@
+<prices>
+    {% if pricesDto.rent %}{% include 'partial/property/price/_rent.xml.twig' with {
+        'rentDto': pricesDto.rent,
+    } only %}{% endif %}
+
+    {% if pricesDto.buy %}{% include 'partial/property/price/_buy.xml.twig' with {
+        'buyDto': pricesDto.buy,
+    } only %}{% endif %}
+
+    {% if pricesDto.auction %}{% include 'partial/property/price/_auction.xml.twig' with {
+        'auctionDto': pricesDto.auction,
+    } only %}{% endif %}
+
+    {% if pricesDto.deposit %}{% include 'partial/property/price/_deposit.xml.twig' with {
+        'depositDto': pricesDto.deposit,
+    } only %}{% endif %}
+
+    {% if pricesDto.additionalOffers %}{% include 'partial/property/price/_additional_offers.xml.twig' with {
+        'additionalOffers': pricesDto.additionalOffers,
+    } only %}{% endif %}
+</prices>

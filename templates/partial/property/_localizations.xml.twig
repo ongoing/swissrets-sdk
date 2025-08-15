@@ -1,0 +1,19 @@
+<localizations>
+    {% for localizationDto in localizations %}
+        <localization languageCode="{{ localizationDto.languageCode }}">
+            <title>{{ localizationDto.title }}</title>
+            {% if localizationDto.excerpt %}<excerpt>{{ localizationDto.excerpt }}</excerpt>{% endif %}
+            {% if localizationDto.description %}<description>{{ localizationDto.description }}</description>{% endif %}
+
+            {% if localizationDto.attachments %}{% include 'partial/_attachments.xml.twig' with {
+                'attachmentsDto': localizationDto.attachments,
+            } only %}{% endif %}
+
+            {% if localizationDto.location %}<location>{{ localizationDto.location }}</location>{% endif %}
+            {% if localizationDto.equipment %}<equipment>{{ localizationDto.equipment }}</equipment>{% endif %}
+            {% if localizationDto.visitInformation %}<visitInformation>{{ localizationDto.visitInformation }}</visitInformation>{% endif %}
+
+            {# TODO: implement events #}
+        </localization>
+    {% endfor %}
+</localizations>

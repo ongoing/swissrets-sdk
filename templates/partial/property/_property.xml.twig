@@ -1,0 +1,39 @@
+<property id="{{ propertyDto.id }}">
+    <type>{{ propertyDto.type.value }}</type>
+    <referenceId>{{ propertyDto.referenceId }}</referenceId>
+
+    {% if propertyDto.availability %}{% include 'partial/_availability.xml.twig' with {
+        'availabilityDto': propertyDto.availability,
+    } only %}{% endif %}
+
+    {% if propertyDto.modified %}
+        <modified>{{ propertyDto.modified | swissRetsDate }}</modified>
+    {% endif %}
+    {% if propertyDto.created %}
+        <created>{{ propertyDto.created | swissRetsDate }}</created>
+    {% endif %}
+
+    {% include 'partial/property/_localizations.xml.twig' with {
+        'localizations': propertyDto.localizations,
+    } only %}
+
+    {% include 'partial/_categories.xml.twig' with {
+        'categories': propertyDto.categories,
+    } only %}
+
+    {% if propertyDto.address %}{% include 'partial/_address.xml.twig' with {
+        'addressDto': propertyDto.address,
+    } only %}{% endif %}
+
+    {% if propertyDto.characteristics %}{% include 'partial/property/_characteristics.xml.twig' with {
+        'characteristicsDto': propertyDto.characteristics,
+    } only %}{% endif %}
+
+    {% if propertyDto.seller %}{% include 'partial/property/_seller.xml.twig' with {
+        'sellerDto': propertyDto.seller,
+    } only %}{% endif %}
+
+    {% if propertyDto.prices %}{% include 'partial/property/_prices.xml.twig' with {
+        'pricesDto': propertyDto.prices,
+    } only %}{% endif %}
+</property>

@@ -1,0 +1,14 @@
+<organization {% if organizationDto.id %}id="{{ organizationDto.id }}"{% endif %}>
+    {% if organizationDto.address %}{% include 'partial/_address.xml.twig' with {
+        'addressDto': organizationDto.address,
+    } only %}{% endif %}
+    {% if organizationDto.legalName %}<legalName>{{ organizationDto.legalName }}</legalName>{% endif %}
+    {% if organizationDto.brand %}<brand>{{ organizationDto.brand }}</brand>{% endif %}
+    {% if organizationDto.email %}<email>{{ organizationDto.email }}</email>{% endif %}
+    {% if organizationDto.emailRem %}<emailRem>{{ organizationDto.emailRem }}</emailRem>{% endif %}
+    {% if organizationDto.phone %}<phone>{{ organizationDto.phone }}</phone>{% endif %}
+    {% if organizationDto.mobile %}<mobile>{{ organizationDto.mobile }}</mobile>{% endif %}
+    {% if organizationDto.website %}{% include 'partial/_website.xml.twig' with {
+        'websiteDto': organizationDto.website,
+    } only %}{% endif %}
+</organization>

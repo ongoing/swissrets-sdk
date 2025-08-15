@@ -7,6 +7,8 @@ namespace Ongoing\Swissrets\Dto;
 
 use Ongoing\Swissrets\Dto\Property\SwissRetsPropertyDto;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 
 /**
@@ -88,8 +90,18 @@ final class SwissRetsExportDto implements SwissRetsDtoInterface
         return $data;
     }
 
-    public function getJson(): string
+    public function generateJson(): string
     {
         return json_encode($this->getData());
+    }
+
+    public function generateXml(): string
+    {
+        $loader = new FilesystemLoader(__DIR__.'/../templates');
+        $twigEnvironment = new Environment($loader);
+
+        return $twigEnvironment->render('export.xml.twig', [
+            'exportDto' => $this,
+        ]);
     }
 }

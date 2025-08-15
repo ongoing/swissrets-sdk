@@ -1,0 +1,20 @@
+<seller>
+    {% if sellerDto.organization %}{% include 'partial/_organization.xml.twig' with {
+        'organizationDto': sellerDto.organization,
+    } only %}{% endif %}
+
+    {% if sellerDto.contactPerson %}{% include 'partial/_person.xml.twig' with {
+        'elementName': "contactPerson",
+        'personDto': sellerDto.contactPerson,
+    } only %}{% endif %}
+
+    {% if sellerDto.inquiryPerson %}{% include 'partial/_person.xml.twig' with {
+        'elementName': "inquiryPerson",
+        'personDto': sellerDto.inquiryPerson,
+    } only %}{% endif %}
+
+    {% if sellerDto.visitPerson %}{% include 'partial/_person.xml.twig' with {
+        'elementName': "visitPerson",
+        'personDto': sellerDto.visitPerson,
+    } only %}{% endif %}
+</seller>

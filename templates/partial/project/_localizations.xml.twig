@@ -1,0 +1,14 @@
+<localizations>
+    {% for localizationDto in localizations %}
+        <localization languageCode="{{ localizationDto.languageCode }}">
+            <title>{{ localizationDto.title }}</title>
+            {% if localizationDto.excerpt %}<excerpt>{{ localizationDto.excerpt }}</excerpt>{% endif %}
+            {% if localizationDto.description %}<description>{{ localizationDto.description }}</description>{% endif %}
+
+            {% if localizationDto.attachments %}{% include 'partial/_attachments.xml.twig' with {
+                'attachmentsDto': localizationDto.attachments,
+            } only %}{% endif %}
+
+        </localization>
+    {% endfor %}
+</localizations>

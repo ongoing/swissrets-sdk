@@ -1,0 +1,7 @@
+<additionalOffers>
+    {% for additionalOfferDto in additionalOffers %}
+        <offer type="{{ additionalOfferDto.type.value }}" {% if additionalOfferDto.priceInterval %}interval="{{ additionalOfferDto.priceInterval.value }}{% endif %}">
+            {{ additionalOfferDto.price }}
+        </offer>
+    {% endfor %}
+</additionalOffers>
