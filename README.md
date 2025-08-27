@@ -9,49 +9,27 @@ composer require "ongoing/swissrets-sdk"
 ```
 
 
-## Usage for Symfony projects
-
-```php
-use Ongoing\Swissrets\Dto\SwissRetsExportDto;use Twig\Environment;
-
-
-final readonly class SwissRetsBuilder
-{
-    public function __construct(
-        private readonly Environment         $environment,
-    ) { }
-
-    public function buildBodyByPropertyList(iterable $properties, PlatformType $platformType): SwissRetsExportDto
-    {
-        $requestDto = new SwissRetsExportDto(
-            generatorName   : 'Test Export',
-            generatorVersion: '1.0'
-        );
-        
-        // generate JSON
-        $json = $requestDto->generateJson();
-        
-        // generate XML
-        $json = $requestDto->generateXml();
-    }
-}
-```
-
-
-## Usage for projects without Symfony
+## Usage
 
 ```php
 use Ongoing\Swissrets\Dto\SwissRetsExportDto;
 
-$requestDto = new SwissRetsExportDto(
+$exportDto = new SwissRetsExportDto(
     generatorName   : 'Test Export',
     generatorVersion: '1.0'
 );
 
+/*
+ * Create and add propertyDtos to $exportDto
+ */
+
 // generate JSON
-$json = $requestDto->getJson();
+$json = $exportDto->generateJson();
 
 // generate XML
-$xml = $generateXml->getJson();
+$xml = $exportDto->generateXml();
 ```
+
+Consider looking at the `Ongoing\Swissrets\Dto\ExampleBuilder` for reference.
+
 
