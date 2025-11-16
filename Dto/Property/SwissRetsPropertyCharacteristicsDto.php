@@ -3,118 +3,44 @@ declare(strict_types=1);
 
 namespace Ongoing\Swissrets\Dto\Property;
 
-
-
 use Ongoing\Swissrets\Dto\Utility\SwissRetsApplicability;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
-
 
 /**
  * @see https://qualipool.github.io/swissrets-json/#properties_items_characteristics
  *
- * TODO: Add missing fields
-ceilingHeight
-craneCapacity
-elevatorLoad
-floor
-floorLoad
-grossPremium
-hallHeight
-hasAttic
-hasBalcony
-hasBuildingLawRestrictions
-hasCableTv
-hasCarPort
-hasCarPortDouble
-hasCellar
-hasChargingStation
-hasConnectedBuildingLand
-hasDemolitionProperty
-hasDishwasher
-hasEvChargingStation
-hasFiberOptic
-hasFireplace
-hasFlatSharingCommunity
-hasForeignQuota
-hasGarage
-hasGarageDouble
-hasGarageUnderground
-hasGardenShed
-hasLakeView
-hasLiftingPlatform
-hasMountainView
-hasMultimediaWiring
-hasNiceView
-hasParking
-hasPhotovoltaic
-hasPlayground
-hasRamp
-hasSteamer
-hasStoreRoom
-hasSupplyGas
-hasSupplyPower
-hasSupplySewage
-hasSupplyWater
-hasSwimmingPool
-hasThermalSolarCollector
-hasTiledStove
-hasTumbleDryer
-hasWashingMachine
-hasRemoteViewings
-isChildFriendly
-isCornerHouse
-isDemolitionProperty
-isDilapidated
-isFirstOccupancy
-isGroundFloor
-isGroundFloorRaised
-isGutted
-isInNeedOfRenovation
-isInNeedOfRenovationPartially
-isLikeNew
-isMiddleHouse
-isModernized
-isNewConstruction
-isOldBuilding
-isProjection
-isQuiet
-isRefurbished
-isRefurbishedPartially
-isSecondaryResidenceAllowed
-isShellConstruction
-isSmokingAllowed
-isSunny
-isTemporaryUse
-isUnderRoof
-isWellTended
-isWheelchairAccessible
-numberOfApartements
-numberOfFloors
-numberOfParcels
-numberOfShowers
-numberOfToilets
-numberOfToiletsGuest
-onEvenGround
-onHillside
-onHillsideSouth
-utilizationRatio
-utilizationRatioConstruction
-volumeGva
-volumeSia
-volumeSia116Gv
-volumeSiaAfv
-volumeSiaAkv
-volumeSiaAngv
-volumeSiaAnv
-volumeSiaAvv
-volumeSiaGv
-yearBuilt
-yearLastRenovated
+ * TODO: Add missing numeric fields
+ * ceilingHeight
+ * craneCapacity
+ * elevatorLoad
+ * floor
+ * floorLoad
+ * grossPremium
+ * hallHeight
+ * numberOfApartements
+ * numberOfFloors
+ * numberOfParcels
+ * numberOfShowers
+ * numberOfToilets
+ * numberOfToiletsGuest
+ * utilizationRatio
+ * utilizationRatioConstruction
+ * volumeGva
+ * volumeSia
+ * volumeSia116Gv
+ * volumeSiaAfv
+ * volumeSiaAkv
+ * volumeSiaAngv
+ * volumeSiaAnv
+ * volumeSiaAvv
+ * volumeSiaGv
+ * yearBuilt
+ * yearLastRenovated
  */
 final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
 {
     public function __construct(
-        // optional fields
+        // optional area / numeric fields
         private ?float $areaBalcony = null,
         private ?float $areaBwf = null,
         private ?float $areaNwf = null,
@@ -147,12 +73,78 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
         private ?float $areaSiaUuf = null,
         private ?float $areaSiaVf = null,
 
+        // tri-state / applicable fields (bool|null → applies / does-not-apply / unknown)
         private ?bool $arePetsAllowed = null,
+        private ?bool $hasAttic = null,
         private ?bool $hasBalcony = null,
+        private ?bool $hasBuildingLawRestrictions = null,
+        private ?bool $hasCableTv = null,
+        private ?bool $hasCarPort = null,
+        private ?bool $hasCarPortDouble = null,
+        private ?bool $hasCellar = null,
+        private ?bool $hasChargingStation = null,
+        private ?bool $hasConnectedBuildingLand = null,
+        private ?bool $hasDemolitionProperty = null,
+        private ?bool $hasDishwasher = null,
         private ?bool $hasElevator = null,
+        private ?bool $hasFireplace = null,
+        private ?bool $hasFlatSharingCommunity = null,
+        private ?bool $hasForeignQuota = null,
         private ?bool $hasGarage = null,
+        private ?bool $hasGarageDouble = null,
+        private ?bool $hasGarageUnderground = null,
+        private ?bool $hasGardenShed = null,
+        private ?bool $hasLakeView = null,
+        private ?bool $hasLiftingPlatform = null,
+        private ?bool $hasMountainView = null,
+        private ?bool $hasNiceView = null,
+        private ?bool $hasParking = null,
+        private ?bool $hasPhotovoltaic = null,
+        private ?bool $hasPlayground = null,
+        private ?bool $hasRamp = null,
+        private ?bool $hasSteamer = null,
+        private ?bool $hasStoreRoom = null,
+        private ?bool $hasSupplyGas = null,
+        private ?bool $hasSupplyPower = null,
+        private ?bool $hasSupplySewage = null,
+        private ?bool $hasSupplyWater = null,
+        private ?bool $hasSwimmingPool = null,
+        private ?bool $hasThermalSolarCollector = null,
+        private ?bool $hasTiledStove = null,
+        private ?bool $hasTumbleDryer = null,
+        private ?bool $hasWashingMachine = null,
+        private ?bool $hasRemoteViewings = null,
+        private ?bool $isChildFriendly = null,
+        private ?bool $isCornerHouse = null,
+        private ?bool $isDemolitionProperty = null,
+        private ?bool $isDilapidated = null,
+        private ?bool $isFirstOccupancy = null,
+        private ?bool $isGroundFloor = null,
+        private ?bool $isGroundFloorRaised = null,
+        private ?bool $isGutted = null,
+        private ?bool $isInNeedOfRenovation = null,
+        private ?bool $isInNeedOfRenovationPartially = null,
+        private ?bool $isLikeNew = null,
+        private ?bool $isMiddleHouse = null,
+        private ?bool $isModernized = null,
+        private ?bool $isNewConstruction = null,
+        private ?bool $isOldBuilding = null,
+        private ?bool $isProjection = null,
+        private ?bool $isQuiet = null,
+        private ?bool $isRefurbished = null,
+        private ?bool $isRefurbishedPartially = null,
+        private ?bool $isSecondaryResidenceAllowed = null,
+        private ?bool $isShellConstruction = null,
+        private ?bool $isSmokingAllowed = null,
+        private ?bool $isSunny = null,
+        private ?bool $isUnderRoof = null,
+        private ?bool $isWellTended = null,
+        private ?bool $isWheelchairAccessible = null,
+        private ?bool $onEvenGround = null,
+        private ?bool $onHillside = null,
+        private ?bool $onHillsideSouth = null,
 
-
+        // counts
         private ?int $numberOfBathrooms = null,
         private ?float $numberOfRooms = null,
     ) {
@@ -250,178 +242,12 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
             throw new \Exception("AreaSiaVf must be greater or equal to 0");
         }
 
-
         if ($this->numberOfBathrooms !== null && $this->numberOfBathrooms < 0) {
             throw new \Exception("NumberOfBathrooms must be greater or equal to 0");
         }
         if ($this->numberOfRooms !== null && $this->numberOfRooms < 0) {
             throw new \Exception("NumberOfRooms must be greater or equal to 0");
         }
-    }
-
-    public function getAreaBwf(): ?float
-    {
-        return $this->areaBwf;
-    }
-
-    public function getAreaBalcony(): ?float
-    {
-        return $this->areaBalcony;
-    }
-
-    public function getAreaNwf(): ?float
-    {
-        return $this->areaNwf;
-    }
-
-    public function getAreaPropertyLand(): ?float
-    {
-        return $this->areaPropertyLand;
-    }
-
-    public function getAreaCellar(): ?float
-    {
-        return $this->areaCellar;
-    }
-
-    public function getAreaTerrace(): ?float
-    {
-        return $this->areaTerrace;
-    }
-
-    public function getAreaLoggia(): ?float
-    {
-        return $this->areaLoggia;
-    }
-
-    public function getAreaGarden(): ?float
-    {
-        return $this->areaGarden;
-    }
-
-    public function getAreaSiaAff(): ?float
-    {
-        return $this->areaSiaAff;
-    }
-
-    public function getAreaSiaAgf(): ?float
-    {
-        return $this->areaSiaAgf;
-    }
-
-    public function getAreaSiaAkf(): ?float
-    {
-        return $this->areaSiaAkf;
-    }
-
-    public function getAreaSiaAkfn(): ?float
-    {
-        return $this->areaSiaAkfn;
-    }
-
-    public function getAreaSiaAkft(): ?float
-    {
-        return $this->areaSiaAkft;
-    }
-
-    public function getAreaSiaAnf(): ?float
-    {
-        return $this->areaSiaAnf;
-    }
-
-    public function getAreaSiaAngf(): ?float
-    {
-        return $this->areaSiaAngf;
-    }
-
-    public function getAreaSiaAvf(): ?float
-    {
-        return $this->areaSiaAvf;
-    }
-
-    public function getAreaSiaBuf(): ?float
-    {
-        return $this->areaSiaBuf;
-    }
-
-    public function getAreaSiaFf(): ?float
-    {
-        return $this->areaSiaFf;
-    }
-
-    public function getAreaSiaGf(): ?float
-    {
-        return $this->areaSiaGf;
-    }
-
-    public function getAreaSiaGgf(): ?float
-    {
-        return $this->areaSiaGgf;
-    }
-
-    public function getAreaSiaGsf(): ?float
-    {
-        return $this->areaSiaGsf;
-    }
-
-    public function getAreaSiaHnf(): ?float
-    {
-        return $this->areaSiaHnf;
-    }
-
-    public function getAreaSiaKf(): ?float
-    {
-        return $this->areaSiaKf;
-    }
-
-    public function getAreaSiaKfn(): ?float
-    {
-        return $this->areaSiaKfn;
-    }
-
-    public function getAreaSiaKft(): ?float
-    {
-        return $this->areaSiaKft;
-    }
-
-    public function getAreaSiaNf(): ?float
-    {
-        return $this->areaSiaNf;
-    }
-
-    public function getAreaSiaNgf(): ?float
-    {
-        return $this->areaSiaNgf;
-    }
-
-    public function getAreaSiaNnf(): ?float
-    {
-        return $this->areaSiaNnf;
-    }
-
-    public function getAreaSiaUf(): ?float
-    {
-        return $this->areaSiaUf;
-    }
-
-    public function getAreaSiaUuf(): ?float
-    {
-        return $this->areaSiaUuf;
-    }
-
-    public function getAreaSiaVf(): ?float
-    {
-        return $this->areaSiaVf;
-    }
-
-    public function getNumberOfBathrooms(): ?int
-    {
-        return $this->numberOfBathrooms;
-    }
-
-    public function getNumberOfRooms(): ?float
-    {
-        return $this->numberOfRooms;
     }
 
     public function getData(): array
@@ -458,10 +284,77 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
             'areaSiaUf' => $this->areaSiaUf,
             'areaSiaUuf' => $this->areaSiaUuf,
             'areaSiaVf' => $this->areaSiaVf,
+
             'arePetsAllowed' => SwissRetsApplicability::fromTriState($this->arePetsAllowed)->value,
+            'hasAttic' => SwissRetsApplicability::fromTriState($this->hasAttic)->value,
             'hasBalcony' => SwissRetsApplicability::fromTriState($this->hasBalcony)->value,
+            'hasBuildingLawRestrictions' => SwissRetsApplicability::fromTriState($this->hasBuildingLawRestrictions)->value,
+            'hasCableTv' => SwissRetsApplicability::fromTriState($this->hasCableTv)->value,
+            'hasCarPort' => SwissRetsApplicability::fromTriState($this->hasCarPort)->value,
+            'hasCarPortDouble' => SwissRetsApplicability::fromTriState($this->hasCarPortDouble)->value,
+            'hasCellar' => SwissRetsApplicability::fromTriState($this->hasCellar)->value,
+            'hasChargingStation' => SwissRetsApplicability::fromTriState($this->hasChargingStation)->value,
+            'hasConnectedBuildingLand' => SwissRetsApplicability::fromTriState($this->hasConnectedBuildingLand)->value,
+            'hasDemolitionProperty' => SwissRetsApplicability::fromTriState($this->hasDemolitionProperty)->value,
+            'hasDishwasher' => SwissRetsApplicability::fromTriState($this->hasDishwasher)->value,
             'hasElevator' => SwissRetsApplicability::fromTriState($this->hasElevator)->value,
+            'hasFireplace' => SwissRetsApplicability::fromTriState($this->hasFireplace)->value,
+            'hasFlatSharingCommunity' => SwissRetsApplicability::fromTriState($this->hasFlatSharingCommunity)->value,
+            'hasForeignQuota' => SwissRetsApplicability::fromTriState($this->hasForeignQuota)->value,
             'hasGarage' => SwissRetsApplicability::fromTriState($this->hasGarage)->value,
+            'hasGarageDouble' => SwissRetsApplicability::fromTriState($this->hasGarageDouble)->value,
+            'hasGarageUnderground' => SwissRetsApplicability::fromTriState($this->hasGarageUnderground)->value,
+            'hasGardenShed' => SwissRetsApplicability::fromTriState($this->hasGardenShed)->value,
+            'hasLakeView' => SwissRetsApplicability::fromTriState($this->hasLakeView)->value,
+            'hasLiftingPlatform' => SwissRetsApplicability::fromTriState($this->hasLiftingPlatform)->value,
+            'hasMountainView' => SwissRetsApplicability::fromTriState($this->hasMountainView)->value,
+            'hasNiceView' => SwissRetsApplicability::fromTriState($this->hasNiceView)->value,
+            'hasParking' => SwissRetsApplicability::fromTriState($this->hasParking)->value,
+            'hasPhotovoltaic' => SwissRetsApplicability::fromTriState($this->hasPhotovoltaic)->value,
+            'hasPlayground' => SwissRetsApplicability::fromTriState($this->hasPlayground)->value,
+            'hasRamp' => SwissRetsApplicability::fromTriState($this->hasRamp)->value,
+            'hasSteamer' => SwissRetsApplicability::fromTriState($this->hasSteamer)->value,
+            'hasStoreRoom' => SwissRetsApplicability::fromTriState($this->hasStoreRoom)->value,
+            'hasSupplyGas' => SwissRetsApplicability::fromTriState($this->hasSupplyGas)->value,
+            'hasSupplyPower' => SwissRetsApplicability::fromTriState($this->hasSupplyPower)->value,
+            'hasSupplySewage' => SwissRetsApplicability::fromTriState($this->hasSupplySewage)->value,
+            'hasSupplyWater' => SwissRetsApplicability::fromTriState($this->hasSupplyWater)->value,
+            'hasSwimmingPool' => SwissRetsApplicability::fromTriState($this->hasSwimmingPool)->value,
+            'hasThermalSolarCollector' => SwissRetsApplicability::fromTriState($this->hasThermalSolarCollector)->value,
+            'hasTiledStove' => SwissRetsApplicability::fromTriState($this->hasTiledStove)->value,
+            'hasTumbleDryer' => SwissRetsApplicability::fromTriState($this->hasTumbleDryer)->value,
+            'hasWashingMachine' => SwissRetsApplicability::fromTriState($this->hasWashingMachine)->value,
+            'hasRemoteViewings' => SwissRetsApplicability::fromTriState($this->hasRemoteViewings)->value,
+            'isChildFriendly' => SwissRetsApplicability::fromTriState($this->isChildFriendly)->value,
+            'isCornerHouse' => SwissRetsApplicability::fromTriState($this->isCornerHouse)->value,
+            'isDemolitionProperty' => SwissRetsApplicability::fromTriState($this->isDemolitionProperty)->value,
+            'isDilapidated' => SwissRetsApplicability::fromTriState($this->isDilapidated)->value,
+            'isFirstOccupancy' => SwissRetsApplicability::fromTriState($this->isFirstOccupancy)->value,
+            'isGroundFloor' => SwissRetsApplicability::fromTriState($this->isGroundFloor)->value,
+            'isGroundFloorRaised' => SwissRetsApplicability::fromTriState($this->isGroundFloorRaised)->value,
+            'isGutted' => SwissRetsApplicability::fromTriState($this->isGutted)->value,
+            'isInNeedOfRenovation' => SwissRetsApplicability::fromTriState($this->isInNeedOfRenovation)->value,
+            'isInNeedOfRenovationPartially' => SwissRetsApplicability::fromTriState($this->isInNeedOfRenovationPartially)->value,
+            'isLikeNew' => SwissRetsApplicability::fromTriState($this->isLikeNew)->value,
+            'isMiddleHouse' => SwissRetsApplicability::fromTriState($this->isMiddleHouse)->value,
+            'isModernized' => SwissRetsApplicability::fromTriState($this->isModernized)->value,
+            'isNewConstruction' => SwissRetsApplicability::fromTriState($this->isNewConstruction)->value,
+            'isOldBuilding' => SwissRetsApplicability::fromTriState($this->isOldBuilding)->value,
+            'isProjection' => SwissRetsApplicability::fromTriState($this->isProjection)->value,
+            'isQuiet' => SwissRetsApplicability::fromTriState($this->isQuiet)->value,
+            'isRefurbished' => SwissRetsApplicability::fromTriState($this->isRefurbished)->value,
+            'isRefurbishedPartially' => SwissRetsApplicability::fromTriState($this->isRefurbishedPartially)->value,
+            'isSecondaryResidenceAllowed' => SwissRetsApplicability::fromTriState($this->isSecondaryResidenceAllowed)->value,
+            'isShellConstruction' => SwissRetsApplicability::fromTriState($this->isShellConstruction)->value,
+            'isSmokingAllowed' => SwissRetsApplicability::fromTriState($this->isSmokingAllowed)->value,
+            'isSunny' => SwissRetsApplicability::fromTriState($this->isSunny)->value,
+            'isUnderRoof' => SwissRetsApplicability::fromTriState($this->isUnderRoof)->value,
+            'isWellTended' => SwissRetsApplicability::fromTriState($this->isWellTended)->value,
+            'isWheelchairAccessible' => SwissRetsApplicability::fromTriState($this->isWheelchairAccessible)->value,
+            'onEvenGround' => SwissRetsApplicability::fromTriState($this->onEvenGround)->value,
+            'onHillside' => SwissRetsApplicability::fromTriState($this->onHillside)->value,
+            'onHillsideSouth' => SwissRetsApplicability::fromTriState($this->onHillsideSouth)->value,
+
             'numberOfBathrooms' => $this->numberOfBathrooms,
             'numberOfRooms' => $this->numberOfRooms,
         ];
