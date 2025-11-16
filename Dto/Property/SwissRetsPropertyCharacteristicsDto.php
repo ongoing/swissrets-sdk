@@ -250,6 +250,516 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
         }
     }
 
+    public function getAreaBalcony(): ?float
+    {
+        return $this->areaBalcony;
+    }
+
+    public function getAreaBwf(): ?float
+    {
+        return $this->areaBwf;
+    }
+
+    public function getAreaNwf(): ?float
+    {
+        return $this->areaNwf;
+    }
+
+    public function getAreaPropertyLand(): ?float
+    {
+        return $this->areaPropertyLand;
+    }
+
+    public function getAreaCellar(): ?float
+    {
+        return $this->areaCellar;
+    }
+
+    public function getAreaTerrace(): ?float
+    {
+        return $this->areaTerrace;
+    }
+
+    public function getAreaLoggia(): ?float
+    {
+        return $this->areaLoggia;
+    }
+
+    public function getAreaGarden(): ?float
+    {
+        return $this->areaGarden;
+    }
+
+    public function getAreaSiaAff(): ?float
+    {
+        return $this->areaSiaAff;
+    }
+
+    public function getAreaSiaAgf(): ?float
+    {
+        return $this->areaSiaAgf;
+    }
+
+    public function getAreaSiaAkf(): ?float
+    {
+        return $this->areaSiaAkf;
+    }
+
+    public function getAreaSiaAkfn(): ?float
+    {
+        return $this->areaSiaAkfn;
+    }
+
+    public function getAreaSiaAkft(): ?float
+    {
+        return $this->areaSiaAkft;
+    }
+
+    public function getAreaSiaAnf(): ?float
+    {
+        return $this->areaSiaAnf;
+    }
+
+    public function getAreaSiaAngf(): ?float
+    {
+        return $this->areaSiaAngf;
+    }
+
+    public function getAreaSiaAvf(): ?float
+    {
+        return $this->areaSiaAvf;
+    }
+
+    public function getAreaSiaBuf(): ?float
+    {
+        return $this->areaSiaBuf;
+    }
+
+    public function getAreaSiaFf(): ?float
+    {
+        return $this->areaSiaFf;
+    }
+
+    public function getAreaSiaGf(): ?float
+    {
+        return $this->areaSiaGf;
+    }
+
+    public function getAreaSiaGgf(): ?float
+    {
+        return $this->areaSiaGgf;
+    }
+
+    public function getAreaSiaGsf(): ?float
+    {
+        return $this->areaSiaGsf;
+    }
+
+    public function getAreaSiaHnf(): ?float
+    {
+        return $this->areaSiaHnf;
+    }
+
+    public function getAreaSiaKf(): ?float
+    {
+        return $this->areaSiaKf;
+    }
+
+    public function getAreaSiaKfn(): ?float
+    {
+        return $this->areaSiaKfn;
+    }
+
+    public function getAreaSiaKft(): ?float
+    {
+        return $this->areaSiaKft;
+    }
+
+    public function getAreaSiaNf(): ?float
+    {
+        return $this->areaSiaNf;
+    }
+
+    public function getAreaSiaNgf(): ?float
+    {
+        return $this->areaSiaNgf;
+    }
+
+    public function getAreaSiaNnf(): ?float
+    {
+        return $this->areaSiaNnf;
+    }
+
+    public function getAreaSiaUf(): ?float
+    {
+        return $this->areaSiaUf;
+    }
+
+    public function getAreaSiaUuf(): ?float
+    {
+        return $this->areaSiaUuf;
+    }
+
+    public function getAreaSiaVf(): ?float
+    {
+        return $this->areaSiaVf;
+    }
+
+    public function getArePetsAllowed(): ?bool
+    {
+        return $this->arePetsAllowed;
+    }
+
+    public function getHasAttic(): ?bool
+    {
+        return $this->hasAttic;
+    }
+
+    public function getHasBalcony(): ?bool
+    {
+        return $this->hasBalcony;
+    }
+
+    public function getHasBuildingLawRestrictions(): ?bool
+    {
+        return $this->hasBuildingLawRestrictions;
+    }
+
+    public function getHasCableTv(): ?bool
+    {
+        return $this->hasCableTv;
+    }
+
+    public function getHasCarPort(): ?bool
+    {
+        return $this->hasCarPort;
+    }
+
+    public function getHasCarPortDouble(): ?bool
+    {
+        return $this->hasCarPortDouble;
+    }
+
+    public function getHasCellar(): ?bool
+    {
+        return $this->hasCellar;
+    }
+
+    public function getHasChargingStation(): ?bool
+    {
+        return $this->hasChargingStation;
+    }
+
+    public function getHasConnectedBuildingLand(): ?bool
+    {
+        return $this->hasConnectedBuildingLand;
+    }
+
+    public function getHasDemolitionProperty(): ?bool
+    {
+        return $this->hasDemolitionProperty;
+    }
+
+    public function getHasDishwasher(): ?bool
+    {
+        return $this->hasDishwasher;
+    }
+
+    public function getHasElevator(): ?bool
+    {
+        return $this->hasElevator;
+    }
+
+    public function getHasFireplace(): ?bool
+    {
+        return $this->hasFireplace;
+    }
+
+    public function getHasFlatSharingCommunity(): ?bool
+    {
+        return $this->hasFlatSharingCommunity;
+    }
+
+    public function getHasForeignQuota(): ?bool
+    {
+        return $this->hasForeignQuota;
+    }
+
+    public function getHasGarage(): ?bool
+    {
+        return $this->hasGarage;
+    }
+
+    public function getHasGarageDouble(): ?bool
+    {
+        return $this->hasGarageDouble;
+    }
+
+    public function getHasGarageUnderground(): ?bool
+    {
+        return $this->hasGarageUnderground;
+    }
+
+    public function getHasGardenShed(): ?bool
+    {
+        return $this->hasGardenShed;
+    }
+
+    public function getHasLakeView(): ?bool
+    {
+        return $this->hasLakeView;
+    }
+
+    public function getHasLiftingPlatform(): ?bool
+    {
+        return $this->hasLiftingPlatform;
+    }
+
+    public function getHasMountainView(): ?bool
+    {
+        return $this->hasMountainView;
+    }
+
+    public function getHasNiceView(): ?bool
+    {
+        return $this->hasNiceView;
+    }
+
+    public function getHasParking(): ?bool
+    {
+        return $this->hasParking;
+    }
+
+    public function getHasPhotovoltaic(): ?bool
+    {
+        return $this->hasPhotovoltaic;
+    }
+
+    public function getHasPlayground(): ?bool
+    {
+        return $this->hasPlayground;
+    }
+
+    public function getHasRamp(): ?bool
+    {
+        return $this->hasRamp;
+    }
+
+    public function getHasSteamer(): ?bool
+    {
+        return $this->hasSteamer;
+    }
+
+    public function getHasStoreRoom(): ?bool
+    {
+        return $this->hasStoreRoom;
+    }
+
+    public function getHasSupplyGas(): ?bool
+    {
+        return $this->hasSupplyGas;
+    }
+
+    public function getHasSupplyPower(): ?bool
+    {
+        return $this->hasSupplyPower;
+    }
+
+    public function getHasSupplySewage(): ?bool
+    {
+        return $this->hasSupplySewage;
+    }
+
+    public function getHasSupplyWater(): ?bool
+    {
+        return $this->hasSupplyWater;
+    }
+
+    public function getHasSwimmingPool(): ?bool
+    {
+        return $this->hasSwimmingPool;
+    }
+
+    public function getHasThermalSolarCollector(): ?bool
+    {
+        return $this->hasThermalSolarCollector;
+    }
+
+    public function getHasTiledStove(): ?bool
+    {
+        return $this->hasTiledStove;
+    }
+
+    public function getHasTumbleDryer(): ?bool
+    {
+        return $this->hasTumbleDryer;
+    }
+
+    public function getHasWashingMachine(): ?bool
+    {
+        return $this->hasWashingMachine;
+    }
+
+    public function getHasRemoteViewings(): ?bool
+    {
+        return $this->hasRemoteViewings;
+    }
+
+    public function getIsChildFriendly(): ?bool
+    {
+        return $this->isChildFriendly;
+    }
+
+    public function getIsCornerHouse(): ?bool
+    {
+        return $this->isCornerHouse;
+    }
+
+    public function getIsDemolitionProperty(): ?bool
+    {
+        return $this->isDemolitionProperty;
+    }
+
+    public function getIsDilapidated(): ?bool
+    {
+        return $this->isDilapidated;
+    }
+
+    public function getIsFirstOccupancy(): ?bool
+    {
+        return $this->isFirstOccupancy;
+    }
+
+    public function getIsGroundFloor(): ?bool
+    {
+        return $this->isGroundFloor;
+    }
+
+    public function getIsGroundFloorRaised(): ?bool
+    {
+        return $this->isGroundFloorRaised;
+    }
+
+    public function getIsGutted(): ?bool
+    {
+        return $this->isGutted;
+    }
+
+    public function getIsInNeedOfRenovation(): ?bool
+    {
+        return $this->isInNeedOfRenovation;
+    }
+
+    public function getIsInNeedOfRenovationPartially(): ?bool
+    {
+        return $this->isInNeedOfRenovationPartially;
+    }
+
+    public function getIsLikeNew(): ?bool
+    {
+        return $this->isLikeNew;
+    }
+
+    public function getIsMiddleHouse(): ?bool
+    {
+        return $this->isMiddleHouse;
+    }
+
+    public function getIsModernized(): ?bool
+    {
+        return $this->isModernized;
+    }
+
+    public function getIsNewConstruction(): ?bool
+    {
+        return $this->isNewConstruction;
+    }
+
+    public function getIsOldBuilding(): ?bool
+    {
+        return $this->isOldBuilding;
+    }
+
+    public function getIsProjection(): ?bool
+    {
+        return $this->isProjection;
+    }
+
+    public function getIsQuiet(): ?bool
+    {
+        return $this->isQuiet;
+    }
+
+    public function getIsRefurbished(): ?bool
+    {
+        return $this->isRefurbished;
+    }
+
+    public function getIsRefurbishedPartially(): ?bool
+    {
+        return $this->isRefurbishedPartially;
+    }
+
+    public function getIsSecondaryResidenceAllowed(): ?bool
+    {
+        return $this->isSecondaryResidenceAllowed;
+    }
+
+    public function getIsShellConstruction(): ?bool
+    {
+        return $this->isShellConstruction;
+    }
+
+    public function getIsSmokingAllowed(): ?bool
+    {
+        return $this->isSmokingAllowed;
+    }
+
+    public function getIsSunny(): ?bool
+    {
+        return $this->isSunny;
+    }
+
+    public function getIsUnderRoof(): ?bool
+    {
+        return $this->isUnderRoof;
+    }
+
+    public function getIsWellTended(): ?bool
+    {
+        return $this->isWellTended;
+    }
+
+    public function getIsWheelchairAccessible(): ?bool
+    {
+        return $this->isWheelchairAccessible;
+    }
+
+    public function getOnEvenGround(): ?bool
+    {
+        return $this->onEvenGround;
+    }
+
+    public function getOnHillside(): ?bool
+    {
+        return $this->onHillside;
+    }
+
+    public function getOnHillsideSouth(): ?bool
+    {
+        return $this->onHillsideSouth;
+    }
+
+    public function getNumberOfBathrooms(): ?int
+    {
+        return $this->numberOfBathrooms;
+    }
+
+    public function getNumberOfRooms(): ?float
+    {
+        return $this->numberOfRooms;
+    }
+
     public function getData(): array
     {
         return [
