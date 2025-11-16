@@ -5,6 +5,7 @@ namespace Ongoing\Swissrets\Dto\Property;
 
 
 
+use Ongoing\Swissrets\Dto\Utility\SwissRetsApplicability;
 use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
 
 
@@ -12,7 +13,6 @@ use Ongoing\Swissrets\Model\SwissRetsDtoInterface;
  * @see https://qualipool.github.io/swissrets-json/#properties_items_characteristics
  *
  * TODO: Add missing fields
-arePetsAllowed
 ceilingHeight
 craneCapacity
 elevatorLoad
@@ -31,7 +31,6 @@ hasChargingStation
 hasConnectedBuildingLand
 hasDemolitionProperty
 hasDishwasher
-hasElevator
 hasEvChargingStation
 hasFiberOptic
 hasFireplace
@@ -147,6 +146,12 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
         private ?float $areaSiaUf = null,
         private ?float $areaSiaUuf = null,
         private ?float $areaSiaVf = null,
+
+        private ?bool $arePetsAllowed = null,
+        private ?bool $hasBalcony = null,
+        private ?bool $hasElevator = null,
+        private ?bool $hasGarage = null,
+
 
         private ?int $numberOfBathrooms = null,
         private ?float $numberOfRooms = null,
@@ -453,7 +458,10 @@ final class SwissRetsPropertyCharacteristicsDto implements SwissRetsDtoInterface
             'areaSiaUf' => $this->areaSiaUf,
             'areaSiaUuf' => $this->areaSiaUuf,
             'areaSiaVf' => $this->areaSiaVf,
-            
+            'arePetsAllowed' => SwissRetsApplicability::fromTriState($this->arePetsAllowed)->value,
+            'hasBalcony' => SwissRetsApplicability::fromTriState($this->hasBalcony)->value,
+            'hasElevator' => SwissRetsApplicability::fromTriState($this->hasElevator)->value,
+            'hasGarage' => SwissRetsApplicability::fromTriState($this->hasGarage)->value,
             'numberOfBathrooms' => $this->numberOfBathrooms,
             'numberOfRooms' => $this->numberOfRooms,
         ];
