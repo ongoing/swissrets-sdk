@@ -16,4 +16,13 @@ enum SwissRetsApplicability: string
             null  => self::UNKNOWN,
         };
     }
+
+    public function toTriState(): ?bool
+    {
+        return match ($this) {
+            self::APPLIES => true,
+            self::DOES_NOT_APPLY => false,
+            self::UNKNOWN => null,
+        };
+    }
 }
