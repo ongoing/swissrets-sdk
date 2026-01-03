@@ -37,7 +37,7 @@ class SwissRetsValidator
              $data = json_decode(json_encode($data));
         }
 
-        $schemaPath = __DIR__ . '/../../resources/schema/swissRetsSchema.json';
+        $schemaPath = __DIR__ . '/../resources/schema/swissRetsSchema.json';
         
         if (!file_exists($schemaPath)) {
             return ['root' => ['Schema file not found at ' . $schemaPath]];
