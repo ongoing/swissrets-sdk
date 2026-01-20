@@ -93,7 +93,23 @@ final class SwissRetsExportDto implements SwissRetsDtoInterface
 
     public function generateJson(): string
     {
-        return json_encode($this->getData());
+        $cleanData = $this->recursiveUnsetNull($this->getData());
+
+        return json_encode($cleanData);
+    }
+
+    private function recursiveUnsetNull(array $array): array
+    {
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $array[$key] = $this->recursiveUnsetNull($value);
+            }
+            if ($value === null) {
+                unset($array[$key]);
+            }
+        }
+
+        return $array;
     }
 
     public function generateXml(): string

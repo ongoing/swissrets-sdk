@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace Ongoing\Swissrets\Dto;
 
-
-
 use Ongoing\Swissrets\Dto\Address\SwissRetsAddressDto;
 use Ongoing\Swissrets\Dto\Address\SwissRetsGeoDto;
 use Ongoing\Swissrets\Dto\Property\SwissRetsPropertyCharacteristicsDto;
 use Ongoing\Swissrets\Dto\Property\SwissRetsPropertyDto;
 use Ongoing\Swissrets\Dto\Property\SwissRetsPropertyPricesDto;
 use Ongoing\Swissrets\Dto\Property\SwissRetsPropertySellerDto;
+use Ongoing\Swissrets\Dto\Utility\SwissRetsApplicability;
 use Ongoing\Swissrets\Dto\Utility\SwissRetsAvailabilityDto;
 use Ongoing\Swissrets\Model\AvailabilityState;
 use Ongoing\Swissrets\Model\PropertyType;
-
+use Ongoing\Swissrets\Validator\SwissRetsValidator;
 
 final class ExampleBuilder
 {
@@ -58,9 +57,15 @@ final class ExampleBuilder
             geo                : $geoDto,
         );
 
-//        $characteristicsDto = new SwissRetsPropertyCharacteristicsDto();
-//        $sellerDto = new SwissRetsPropertySellerDto();
-//        $pricesDto = new SwissRetsPropertyPricesDto();
+        $characteristicsDto = new SwissRetsPropertyCharacteristicsDto(
+            areaBalcony: 12.5,
+            numberOfRooms: 3.5,
+            hasBalcony: SwissRetsApplicability::APPLIES,
+            arePetsAllowed: SwissRetsApplicability::DOES_NOT_APPLY
+        );
+        
+        // $sellerDto = new SwissRetsPropertySellerDto();
+        // $pricesDto = new SwissRetsPropertyPricesDto();
 
         $propertyDto = new SwissRetsPropertyDto(
             id: '1.0',
@@ -70,11 +75,25 @@ final class ExampleBuilder
             modified: new \DateTimeImmutable(),
             created: new \DateTimeImmutable(),
             address: $addressDto,
-//            characteristics: $characteristicsDto,
-//            seller: $sellerDto,
-//            prices: $pricesDto,
+            characteristics: $characteristicsDto,
+            // seller: $sellerDto,
+            // prices: $pricesDto,
         );
 
         $swissRetsExportDto->addProperty($propertyDto);
+    }
+
+    /**
+     * Validates the given DTO and returns validation errors.
+     *
+     * @param SwissRetsExportDto $dto
+     * @return array
+     */
+    public static function validate(SwissRetsExportDto $dto): array
+    {
+        $validator = new SwissRetsValidator();
+        $json = $dto->generateJson();
+        
+        return $validator->validate($json);
     }
 }

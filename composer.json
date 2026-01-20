@@ -22,7 +22,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=8.2",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "opis/json-schema": "^2.6"
     },
     "autoload": {
         "psr-4": {
