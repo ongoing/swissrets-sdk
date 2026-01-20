@@ -13,6 +13,7 @@ composer require "ongoing/swissrets-sdk"
 
 ```php
 use Ongoing\Swissrets\Dto\SwissRetsExportDto;
+use Ongoing\Swissrets\Validator\SwissRetsValidator;
 
 $exportDto = new SwissRetsExportDto(
     generatorName   : 'Test Export',
@@ -23,13 +24,14 @@ $exportDto = new SwissRetsExportDto(
  * Create and add propertyDtos to $exportDto
  */
 
-// generate JSON
+// Validate DTO
+SwissRetsValidator::validateExportDto($exportDto);
+
+// Generate JSON
 $json = $exportDto->generateJson();
 
-// generate XML
+// Generate XML
 $xml = $exportDto->generateXml();
 ```
 
 Consider looking at the `Ongoing\Swissrets\Dto\ExampleBuilder` for reference.
-
-

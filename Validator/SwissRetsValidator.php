@@ -2,6 +2,7 @@
 
 namespace Ongoing\Swissrets\Validator;
 
+use Ongoing\Swissrets\Dto\SwissRetsExportDto;
 use Opis\JsonSchema\Validator;
 use Opis\JsonSchema\Errors\ErrorFormatter;
 
@@ -16,12 +17,23 @@ class SwissRetsValidator
     }
 
     /**
+     * Validates the given DTO and returns validation errors.
+     */
+    public static function validateExportDto(SwissRetsExportDto $dto): array
+    {
+        $validator = new self();
+        $json = $dto->generateJson();
+
+        return $validator->validateJson($json);
+    }
+
+    /**
      * Validates the given data against the SwissRETS schema.
      *
      * @param mixed $data The data to validate (can be an object, array, or JSON string)
      * @return array An array of errors formatted by Opis ErrorFormatter, empty if valid.
      */
-    public function validate(mixed $data): array
+    public function validateJson(mixed $data): array
     {
         if (is_string($data)) {
             $decoded = json_decode($data);

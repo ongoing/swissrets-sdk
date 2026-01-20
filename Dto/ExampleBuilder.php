@@ -15,6 +15,7 @@ use Ongoing\Swissrets\Model\AvailabilityState;
 use Ongoing\Swissrets\Model\PropertyType;
 use Ongoing\Swissrets\Validator\SwissRetsValidator;
 
+
 final class ExampleBuilder
 {
     public static function generateExampleExport(): SwissRetsExportDto
@@ -84,16 +85,10 @@ final class ExampleBuilder
     }
 
     /**
-     * Validates the given DTO and returns validation errors.
-     *
-     * @param SwissRetsExportDto $dto
-     * @return array
+     * @deprecated - use SwissRetsValidator::validateExportDto directly instead
      */
     public static function validate(SwissRetsExportDto $dto): array
     {
-        $validator = new SwissRetsValidator();
-        $json = $dto->generateJson();
-        
-        return $validator->validate($json);
+        return SwissRetsValidator::validateExportDto($dto);
     }
 }
